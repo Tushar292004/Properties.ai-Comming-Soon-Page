@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary: #d89e21;
+    --light: #e6e6e6;
+    --off-white: #e9e9e9;
+    --dark: #313131;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+body::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for the opacity of the tint */
+}
+
+.container {
+    margin: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+/*Global*/
+.coming_soon,
+.form,
+.counter,
+.counter .count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coming_soon {
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    min-height: 100vh;
+}
+.sm_text {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-family:  "M PLUS 1 Code", monospace;
+}
+.main_text {
+    font-size: clamp(2.5rem,10vw,6.5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.07em;
+    margin: 0;
+    color: var(--light);
+    font-weight: 800;
+    text-shadow: 0px 0px 10px #e9e9e97d;
+}
+.main_para {
+    color: var(--off-white);
+    font-weight: 550;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    max-width: 800px;
+    margin: 1.35rem auto;
+    text-shadow: 0px 0px 5px #e9e9e97d;
+}
+/*Form*/
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form input, .form button {
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+}
+.form input {
+    background: var(--off-white);
+    flex: 1;
+}
+.form button {
+    background: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+}
+/*Counter*/
+.counter {
+    flex-wrap: wrap;
+    margin:  1rem 0;
+}
+.counter .count {
+    flex-direction: column;
+    margin: .5rem;
+    color: var(--dark);
+    background: var(--off-white);
+    width: 90px;
+    border-radius: .35rem;
+    padding: 1rem;
+}
+.counter .count span.digit {
+    font-size: clamp(1.35rem,2vw,2rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    /* text-shadow: 0px 0px 2px var(--primary); */
+}
+.counter .count span {
+    opacity: .80;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+/*Socials*/
+.socials a {
+    margin: 0 0.75rem;
+    color: var(--light);
+    font-size: 1.3rem;
+    transition: .3s ease;
+    text-shadow: 0px 0px 5px #e9e9e97d;
+}
+.socials a:hover { 
+    opacity: 1;
+    color: var(--primary);
+}
+
+.credit{
+    font-size: 1.3rem;
+    color: var(--light);
+}
+
+.credit-name{
+    text-decoration: none;
+    list-style: none;
+    color: var(--primary);
+    text-shadow: 0px 0px 2px var(--primary);
+}
