@@ -1,35 +1,53 @@
 (() => {
     const sec = 1000,
-      min = sec * 60,
-      hour = min * 60,
-      day = hour * 24;
-  
+        min = sec * 60,
+        hour = min * 60,
+        day = hour * 24;
+
     const end = new Date("April 21, 2024 00:00:00").getTime();
-  
+
     const int = setInterval(() => {
-      const current = new Date().getTime();
-      const remaining = end - current;
-  
-      document.querySelector("#days").innerHTML = Math.floor(remaining / day);
-      document.querySelector("#hours").innerHTML = Math.floor(
-        (remaining % day) / hour
-      );
-      document.querySelector("#minutes").innerHTML = Math.floor(
-        (remaining % hour) / min
-      );
-      document.querySelector("#seconds").innerHTML = Math.floor(
-        (remaining % min) / sec
-      );
-  
-      if (remaining < 0) {
-        document.querySelector(".main_para").innerHTML =
-          "The big day is finally here - view here <a href=example.com>website</a>";
-        const digits = document.querySelectorAll(".digit");
-        digits.forEach((digit) => {
-          digit.innerHTML = "00";
-        });
-        clearInterval(int);
-      }
+        const current = new Date().getTime();
+        const remaining = end - current;
+
+        document.querySelector("#days").innerHTML = Math.floor(remaining / day);
+        document.querySelector("#hours").innerHTML = Math.floor(
+            (remaining % day) / hour
+        );
+        document.querySelector("#minutes").innerHTML = Math.floor(
+            (remaining % hour) / min
+        );
+        document.querySelector("#seconds").innerHTML = Math.floor(
+            (remaining % min) / sec
+        );
+
+        if (remaining < 0) {
+            document.querySelector(".main_para").innerHTML =
+                "The big day is finally here - view here <a href=example.com>website</a>";
+            const digits = document.querySelectorAll(".digit");
+            digits.forEach((digit) => {
+                digit.innerHTML = "00";
+            });
+            clearInterval(int);
+        }
     }, 1000);
-  })();
-  
+})();
+
+
+const myText = new SplitType('.sm_text')
+
+gsap.to('.char', {
+    y: 0,
+    stagger: 0.05,
+    delay: 0.2,
+    duration: .1
+})
+
+const myText1 = new SplitType('.main_text')
+
+gsap.to('.char', {
+    y: 0,
+    stagger: 0.05,
+    delay: 0.2,
+    duration: .1
+})
